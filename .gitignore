@@ -13,3 +13,9 @@
 
 # out文件夹
 out
+
+# 配置文件
+jdbc.properties
+
+# 测试用
+test
