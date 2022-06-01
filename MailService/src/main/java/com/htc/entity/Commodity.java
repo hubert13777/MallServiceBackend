@@ -17,6 +17,24 @@ public class Commodity {
     private String generateInformation; // varchar(40) DEFAULT NULL
     private String iconUrl;         // varchar(80) DEFAULT NULL
 
+    @Override
+    public String toString() {
+        return "Commodity{" +
+                "goodsId=" + goodsId +
+                ", goodsName='" + goodsName + '\'' +
+                ", message='" + message + '\'' +
+                ", tabs='" + tabs + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", pictureUrl1='" + pictureUrl1 + '\'' +
+                ", pictureUrl2='" + pictureUrl2 + '\'' +
+                ", pictureUrl3='" + pictureUrl3 + '\'' +
+                ", specification='" + specification + '\'' +
+                ", generateInformation='" + generateInformation + '\'' +
+                ", iconUrl='" + iconUrl + '\'' +
+                '}';
+    }
+
     public int getGoodsId() {
         return goodsId;
     }
