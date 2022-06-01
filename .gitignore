@@ -19,3 +19,4 @@ jdbc.properties
 
 # 测试用
 test
+target
