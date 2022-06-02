@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CommodityService {
+public class SpecificPageService {
     @Autowired
     private CommodityDao commodityDao;
 
@@ -16,7 +16,7 @@ public class CommodityService {
         return commodityDao.selectAll();
     }
 
-    public Commodity getGoodsById(int goodsId){
+    public Commodity getGoodById(int goodsId){
         return commodityDao.selectAllById(goodsId);
     }
 }
