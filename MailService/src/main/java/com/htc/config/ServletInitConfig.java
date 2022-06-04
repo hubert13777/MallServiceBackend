@@ -1,9 +1,9 @@
 package com.htc.config;
 
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 public class ServletInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
@@ -13,12 +13,20 @@ public class ServletInitConfig extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{SpringMVCConfig.class};
+        return new Class[]{SpringMvcConfig.class};
     }
 
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    //设置过滤器，处理乱码
+    @Override
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        return new Filter[]{filter};
     }
 }
 
