@@ -20,7 +20,7 @@ public class CommodityServiceTest {
     private CommodityService commodityService;
 
     @Test
-    public void testCommodity() {
+    public void testGetAllGoods() {
         List<Commodity> goods = commodityService.getAllGoods();
         for(Commodity good:goods){
             System.out.println(good);
