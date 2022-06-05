@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface BasicDao {
     @Select("select * from Basic;")
-    public List<Basic> selectAll();
+    List<Basic> selectAll();
     
     @Select("select * from Basic where goodsId = #{id};")
-    public Basic selectAllById(int id);
+    Basic selectgoodById(int id);
 }

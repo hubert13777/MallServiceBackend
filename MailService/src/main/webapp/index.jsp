@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>智能购物</title>
   </head>
   <body>
-  $END$
+    <h2>智能购物车欢迎页面</h2>
   </body>
 </html>

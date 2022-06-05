@@ -11,12 +11,21 @@ import java.util.List;
 public class BasicService {
     @Autowired
     private BasicDao basicDao;
-    
+
+    /**
+     * 获取所有Basic视图中的商品信息
+     * @return Basic对象列表
+     */
     public List<Basic> getAllGoods() {
         return basicDao.selectAll();
     }
-    
+
+    /**
+     * 根据商品id获取Basic视图中的商品信息
+     * @param goodsId 商品id
+     * @return Basic对象
+     */
     public Basic getGoodById(int goodsId) {
-        return basicDao.selectAllById(goodsId);
+        return basicDao.selectgoodById(goodsId);
     }
 }
