@@ -28,4 +28,12 @@ public class BasicController {
         if (good != null) return new Response<Basic>(Response.Code.GET_OK.getNum(), "OK", good);
         else return new Response<>(Response.Code.GET_ERROR.getNum(), "商品信息为空，可能不存在", null);
     }
+    
+    // 非REST风格的URL
+    @GetMapping("/detail")
+    public Response<?> sendGood2(int goodsId) {
+        Basic good = basicService.getGoodById(goodsId);
+        if (good != null) return new Response<Basic>(Response.Code.GET_OK.getNum(), "OK", good);
+        else return new Response<>(Response.Code.GET_ERROR.getNum(), "商品信息为空，可能不存在", null);
+    }
 }

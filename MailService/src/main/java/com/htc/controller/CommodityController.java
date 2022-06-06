@@ -29,4 +29,12 @@ public class CommodityController {
         if(good!=null) return new Response<Commodity>(Response.Code.GET_OK.getNum(),"OK",good);
         else return new Response<>(Response.Code.GET_ERROR.getNum(),"商品信息为空，可能不存在",null);
     }
+    
+    // 非REST风格的URL
+    @GetMapping("/detail")
+    public Response<?> sendGood2(int goodsId){
+        Commodity good=commodityService.getGoodById(goodsId);
+        if(good!=null) return new Response<Commodity>(Response.Code.GET_OK.getNum(),"OK",good);
+        else return new Response<>(Response.Code.GET_ERROR.getNum(),"商品信息为空，可能不存在",null);
+    }
 }
