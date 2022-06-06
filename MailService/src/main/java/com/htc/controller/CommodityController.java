@@ -23,8 +23,8 @@ public class CommodityController {
         return new Response<Commodity>(Response.Code.GET_OK.getNum(),"OK",goods);
     }
 
-    @GetMapping("/#{goodsId}")
-    public Response<?> sendGood(int goodsId){
+    @GetMapping("/{goodsId}")
+    public Response<?> sendGood(@PathVariable int goodsId){
         Commodity good=commodityService.getGoodById(goodsId);
         if(good!=null) return new Response<Commodity>(Response.Code.GET_OK.getNum(),"OK",good);
         else return new Response<>(Response.Code.GET_ERROR.getNum(),"商品信息为空，可能不存在",null);
