@@ -2,9 +2,11 @@ package com.htc.service;
 
 import com.htc.dao.CommodityDao;
 import com.htc.entity.Commodity;
+import com.htc.entity.CommodityForAndroid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -19,6 +21,15 @@ public class CommodityService {
     public List<Commodity> getAllGoods(){
         return commodityDao.selectAll();
     }
+    
+    public List<CommodityForAndroid> getAllGoodsForAndroid(){
+        List<Commodity> temp = commodityDao.selectAll();
+        List<CommodityForAndroid> res=new LinkedList<>();
+        for(Commodity c:temp){
+            res.add(new CommodityForAndroid(c));
+        }
+        return res;
+    }
 
     /**
      * 根据商品ID获取指定商品信息
@@ -27,6 +38,10 @@ public class CommodityService {
      */
     public Commodity getGoodById(int goodsId){
         return commodityDao.selectAllById(goodsId);
+    }
+    
+    public CommodityForAndroid getGoodByIdForAndroid(int goodsId){
+        return new CommodityForAndroid(commodityDao.selectAllById(goodsId));
     }
 
     /**

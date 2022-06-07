@@ -3,8 +3,8 @@ package com.htc.entity;
 public class Basic {
     private int goodsId;            // NOT NULL COMMENT '商品id'
     private String goodsName;       // varchar(20) NOT NULL DEFAULT '临时商品'
-    private float price;            // decimal(10,2) unsigned NOT NULL DEFAULT '99.99'
     private String generateInformation; // varchar(40) DEFAULT NULL
+    private float price;            // decimal(10,2) unsigned NOT NULL DEFAULT '99.99'
     private String iconUrl;         // varchar(80) DEFAULT NULL
 
     @Override
