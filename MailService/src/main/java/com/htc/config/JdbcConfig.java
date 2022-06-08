@@ -1,4 +1,4 @@
-package config;
+package com.htc.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;

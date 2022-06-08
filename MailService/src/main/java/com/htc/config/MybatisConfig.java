@@ -1,4 +1,4 @@
-package config;
+package com.htc.config;
 
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
