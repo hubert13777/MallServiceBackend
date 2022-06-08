@@ -19,7 +19,7 @@ public class BasicController {
     public Response<?> sendAllGoods() {
         List<Basic> goods = basicService.getAllGoods();
         if (goods == null) throw new BusinessException(Response.Code.BUSINESS_ERROR.getNum(), "未查询到数据，请稍后再试");
-        return new Response<Basic>(Response.Code.GET_OK.getNum(), "OK", goods);
+        return new Response<List<Basic>>(Response.Code.GET_OK.getNum(), "OK", goods);
     }
     
     @GetMapping("/{goodsId}")

@@ -9,6 +9,7 @@ import com.htc.service.CommodityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -21,14 +22,14 @@ public class CommodityController {
     public Response<?> sendAllGoods() {
         List<Commodity> goods=commodityService.getAllGoods();
         if(goods==null) throw new BusinessException(Response.Code.BUSINESS_ERROR.getNum(),"未查询到数据，请稍后再试");
-        return new Response<Commodity>(Response.Code.GET_OK.getNum(),"OK",goods);
+        return new Response<List<Commodity>>(Response.Code.GET_OK.getNum(),"OK",goods);
     }
     
     @GetMapping("/android")
     public Response<?> sendAllGoodsToAndroid(){
         List<CommodityForAndroid> goods=commodityService.getAllGoodsForAndroid();
         if(goods==null) throw new BusinessException(Response.Code.BUSINESS_ERROR.getNum(),"未查询到数据，请稍后再试");
-        return new Response<CommodityForAndroid>(Response.Code.GET_OK.getNum(),"OK",goods);
+        return new Response<List<CommodityForAndroid>>(Response.Code.GET_OK.getNum(),"OK",goods);
     }
 
     @GetMapping("/{goodsId}")

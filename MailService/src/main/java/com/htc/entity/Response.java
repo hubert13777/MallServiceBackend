@@ -24,23 +24,14 @@ public class Response<T> {
 
     private int code;
     private String message;
-    private List<T> data;
+    private T data;
 
     public Response() {
-    }
-
-    public Response(int code, String message, List<T> data) {
-        this.code = code;
-        this.message = message;
-        this.data = data;
     }
 
     public Response(int code, String message, T data) {
         this.code = code;
         this.message = message;
-        List<T> temp=new ArrayList<>();
-        temp.add(data);
-        this.data=temp;
+        this.data = data;
     }
-
 }
