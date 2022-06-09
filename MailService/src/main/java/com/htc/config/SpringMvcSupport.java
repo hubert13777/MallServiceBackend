@@ -9,5 +9,6 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         //访问指定文件夹的时候不由SpringMVC处理
         registry.addResourceHandler("/pages/**").addResourceLocations("/pages/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/images/");
     }
 }
