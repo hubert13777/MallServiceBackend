@@ -29,7 +29,7 @@ public class BasicController {
         else return new Response<>(Response.Code.GET_ERROR.getNum(), "商品信息为空，可能不存在", null);
     }
     
-    // 非REST风格的URL
+    // 非REST风格，获得所有商品信息
     @GetMapping("/detail")
     public Response<?> sendGood2(int goodsId) {
         Basic good = basicService.getGoodById(goodsId);
